@@ -1,11 +1,8 @@
+
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Inter", sans-serif;
+  background: #f4f6f9;
 }
 
 .app {
@@ -87,4 +84,104 @@ h1 {
   flex: 1;
   margin-right: 10px;
   padding: 5px;
+}
+
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+}
+
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.sidebar button:hover {
+  background: #1f2937;
+}
+
+.navbar {
+  background: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4f46e5;
+}
+
+
+li {
+  background: #f9fafb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.logout {
+  margin-top: auto;
+  background: #ef4444;
 }

@@ -1,48 +1,30 @@
-import { useState } from "react";
-import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import { AuthProvider, AuthContext } from "./context/AuthContext";
+import { useContext } from "react";
+
+function PrivateRoute({ children }) {
+  const { user } = useContext(AuthContext);
+  return user ? children : <Navigate to="/" />;
+}
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [search, setSearch] = useState("");
-
-  const addTodo = (text) => {
-    setTodos([...todos, { id: Date.now(), text }]);
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
-  };
-
-  const updateTodo = (id, newText) => {
-    setTodos(todos.map(todo =>
-      todo.id === id ? { ...todo, text: newText } : todo
-    ));
-  };
-
-  const filteredTodos = todos.filter(todo =>
-    todo.text.toLowerCase().includes(search.toLowerCase())
-  );
-
   return (
-    <div className="app">
-  <h1> Ma Todo List</h1>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Login />} />
 
-  <input
-    className="search"
-    type="text"
-    placeholder="🔍 Rechercher..."
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-  />
-
-  <TodoForm addTodo={addTodo} />
-  <TodoList
-    todos={filteredTodos}
-    deleteTodo={deleteTodo}
-    updateTodo={updateTodo}
-  />
-</div>
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </AuthProvider>
   );
 }
 

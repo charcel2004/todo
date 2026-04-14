@@ -11,14 +11,10 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-  <input
-    value={text}
-    onChange={(e) => setText(e.target.value)}
-    placeholder="Ajouter une tâche..."
-  />
-  <button type="submit">Ajouter</button>
-</form>
+    <form onSubmit={handleSubmit}>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+      <button>Ajouter</button>
+    </form>
   );
 }
 
