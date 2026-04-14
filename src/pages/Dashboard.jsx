@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "../layout/Sidebar";
 import Navbar from "../layout/Navbar";
-import TodoPage from "../modules/todos/TodoPage";
+import TodoPage from "../modules/Todos/TodoPage";
 
 function Dashboard() {
   const [page, setPage] = useState("todos");
