@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Trash2,Pencil } from 'lucide-react';
 
 function TodoItem({ todo, deleteTodo, updateTodo }) {
   const [editing, setEditing] = useState(false);
@@ -14,8 +15,8 @@ function TodoItem({ todo, deleteTodo, updateTodo }) {
       ) : (
         <>
           {todo.text}
-          <button onClick={() => setEditing(true)}>✏</button>
-          <button onClick={() => deleteTodo(todo.id)}>🗑</button>
+          <button onClick={() => setEditing(true)}><Pencil /></button>
+          <button onClick={() => deleteTodo(todo.id)}><Trash2 /></button>
         </>
       )}
     </li>

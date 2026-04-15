@@ -2,6 +2,7 @@ import { useState } from "react";
 import Sidebar from "../layout/Sidebar";
 import Navbar from "../layout/Navbar";
 import TodoPage from "../modules/Todos/TodoPage";
+import EtudiantPage from "../modules/Etudiants/EtudiantPage";
 
 function Dashboard() {
   const [page, setPage] = useState("todos");
@@ -15,8 +16,8 @@ function Dashboard() {
 
         <div className="content">
           {page === "todos" && <TodoPage />}
-          {page === "students" && <div>Students</div>}
-          {page === "teachers" && <div>Teachers</div>}
+          {page === "students" && <EtudiantPage />}
+          {page === "teachers" && <div>Teachers</div>} 
         </div>
       </div>
     </div>

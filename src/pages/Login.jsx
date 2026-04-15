@@ -14,11 +14,23 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Connexion</h2>
-      <input onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-      <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-      <button onClick={handleLogin}>Login</button>
+    <div className="login-container">
+      <div className="login-card">
+        <h2>Connexion </h2>
+        <input
+          type="text"
+          placeholder="Nom d'utilisateur"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <input
+          type="password"
+          placeholder="Mot de passe"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button onClick={handleLogin}>Se connecter</button>
+      </div>
     </div>
   );
 }

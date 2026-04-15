@@ -185,3 +185,64 @@ li {
   margin-top: auto;
   background-color: #ef4444;
 }
+
+/* Conteneur global */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+}
+
+/* Carte */
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Titre */
+.login-card h2 {
+  margin-bottom: 10px;
+}
+
+.login-card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+/* Focus */
+.login-card input:focus {
+  border-color: #6366f1;
+}
+
+/* Bouton */
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover */
+.login-card button:hover {
+  background: #4f46e5;
+}
